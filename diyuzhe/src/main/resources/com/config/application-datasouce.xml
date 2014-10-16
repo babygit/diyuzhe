@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans    
+    http://www.springframework.org/schema/beans/spring-beans-4.0.xsd     
+        http://www.springframework.org/schema/mvc   
+    http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd 
+    http://www.springframework.org/schema/context   
+    http://www.springframework.org/schema/context/spring-context-4.0.xsd   
+     http://www.springframework.org/schema/task
+    http://www.springframework.org/schema/task/spring-task-4.0.xsd">
+	<!-- JNDI方式配置数据源 -->
+	<!-- <bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean"> 
+		<property name="jndiName" value="${jndiName}"></property> </bean> -->
+	<bean id="dataSource" class="org.logicalcobwebs.proxool.ProxoolDataSource">
+	<!-- 配置文件环境  -->
+		<!-- <property name="driver">
+			<value>${orm.mysql.jdbc.driverClassName}</value>
+		</property>
+		<property name="driverUrl">
+			<value>${orm.mysql.jdbc.url}</value>
+		</property>
+		<property name="user" value="${orm.mysql.jdbc.username}" />
+		<property name="password" value="${orm.mysql.jdbc.password}" />
+		<property name="houseKeepingTestSql" value="${orm.mysql.jdbc.validationQuery}" /> -->
+		<property name="driver">
+			<value>com.mysql.jdbc.Driver</value>
+		</property>
+		<property name="driverUrl">
+			<value>jdbc:mysql://10.32.140.161:3306/wxs</value>
+		</property>
+		<property name="user" value="wxs" />
+		<property name="password" value="wxs" />
+		<property name="houseKeepingTestSql" value="select 1 from dual" />
+	</bean>
+
+</beans>
