@@ -28,7 +28,7 @@ public class ArticleController {
 	@ResponseBody
 	@RequestMapping("/getArticleList/{beginRow}/{pageSize}")
 	public ResultProxy getArticleList(@PathVariable("beginRow") int beginRow, @PathVariable("beginRow") int pageSize) {
-		logger.info("getArticleList|beginRow|"+beginRow+"|pageSize|"+pageSize);
+		logger.info("getArticleList|beginRow|" + beginRow + "|pageSize|" + pageSize);
 		logger.info("getArticleList|articleService|" + JSON.toJSONString(articleService));
 		return new ResultProxy();
 	}
